@@ -18,13 +18,17 @@ Create a basic namespace Python package:
 
 Inside of this new Python package you can directly run make:
 
-- To get started with the new packages:
+- To get started with the new package:
 
     make build
 
 - To build the html Sphinx documentation:
 
     make docs
+
+- Have a look at the documentation:
+
+    docs/build/html/index.html 
 
 - To run the unit tests:
 
