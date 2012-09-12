@@ -23,6 +23,14 @@ Create shiny new Python package::
 
     $ ./bin/templer tooth_basic_namespace my.project
 
+
+.. note::
+
+   Right now only basic namespace packages are supported. These contain one dot in the
+   name. Basic packages without a dot will be added soon, as well as packges with a 
+   nested namespace (2 dots in name).
+
+
 Get started with the new package
 --------------------------------
 
