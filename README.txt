@@ -1,22 +1,47 @@
-.. contents::
+===========
+Tooth.paste
+===========
 
-Introduction
-============
+Tooth.paste creates shiny new Python packages. Start your new packages with a prepared
+Sphinx documentation section, a test folder for your unit tests and a Makefile containing
+all the tools needed to keep your Python code clean. 
 
-Install a virtualenv and setup the package to create the bin/templer script
-and the Python project template:
+To get started:
 
     $ cd tooth.paste
-    $ python/virtualenv --no-site-packages .
+    $ virtualenv --no-site-packages .
     $ bin/python setup.py develop
 
-Create a custom basic Python project:
+Create a basic namespace Python package:
 
     $ ./bin/templer tooth_basic_namespace
 
-The "tooth_basic_namespace" template should be available through templer:
+Inside of this new Python package you can directly run make:
 
-    $ ./bin/templer --list
-    tooth_basic_namespace: A custom basic Python project
-    This creates a Tooth Python project.
+- To get started with the new packages:
 
+    make build
+
+- To build the html Sphinx documentation:
+
+    make docs
+
+- To run the unit tests:
+
+    make test
+
+- To run the coverage:
+
+    make coverage
+  
+- To run pylint:
+
+    make pylint
+
+- To run flake8:
+
+    make flake8
+
+- To run pep8:
+
+    make pep8
