@@ -5,9 +5,9 @@ from setuptools import find_packages
 install_requires = [
     'setuptools',
     # -*- Extra requirements: -*-
-    'PasteScript', 
+    'PasteScript',
     'templer.core',
-    ]
+]
 
 entry_points = """
     # -*- Entry points: -*-
@@ -19,8 +19,8 @@ classifiers = [
     'Programming Language :: Python',
     # Get more strings from
     # http://pypi.python.org/pypi?%3Aaction=list_classifiers
-    ]
-      
+]
+
 with open("README.txt") as f:
     README = f.read()
 
