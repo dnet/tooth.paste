@@ -1,4 +1,4 @@
-.PHONY: docs build test coverage pylint flake8 templer
+.PHONY: docs build test coverage pylint flake8 pep8 pyflakes templer sloccount
 
 ifndef VTENV_OPTS
 VTENV_OPTS = "--no-site-packages"
@@ -19,10 +19,16 @@ coverage: bin/coverage bin/nosetests
 	bin/coverage html
 
 pylint:	bin/pylint
-	bin/pylint thooth/paste
+	bin/pylint tooth/paste
 
 flake8:	bin/flake8
 	bin/flake8 --max-complexity 12 tooth/paste
+
+pep8:	bin/pep8
+	bin/pep8 tooth/paste
+
+pyflakes:	bin/pyflakes
+	bin/pyflakes tooth/paste
 
 templer: bin/python
 	# Hack to make believe templer that the current folder is the home folder
@@ -46,3 +52,12 @@ bin/pylint: bin/python
 
 bin/flake8: bin/python
 	bin/pip install flake8
+
+bin/pyflakes: bin/python
+	bin/pip install pyflakes
+
+bin/pep8: bin/python
+	bin/pip install pep8
+
+sloccount:	bin/python
+	sloccount tooth/paste
