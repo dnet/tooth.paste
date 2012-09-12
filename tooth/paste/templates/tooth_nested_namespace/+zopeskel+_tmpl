@@ -16,10 +16,10 @@ author = $author
 author_email = $author_email
 
 # Project URL (URL of the homepage for this project)
-url = ${repr($url) or $empty}
+url = ${$url or $empty}
 
 # Project License (Name of license for the project)
-license_name = ${repr($license_name) or $empty}
+license_name = ${$license_name or $empty}
 
 # Zip-Safe? (Can this project be used as a zipped egg? (true/false))
 zip_safe = ${repr(bool($zip_safe)) or False}
