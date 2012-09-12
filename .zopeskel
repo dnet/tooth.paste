@@ -15,9 +15,6 @@ author = Maik Roder
 # Author Email (Email of author for project)
 author_email = maikroeder@gmail.com
 
-# Long Description (Multi-line description (in ReST))
-long_description = 
-
 # Project URL (URL of the homepage for this project)
 url = https://github.com/maikroeder/tooth.paste.git
 
