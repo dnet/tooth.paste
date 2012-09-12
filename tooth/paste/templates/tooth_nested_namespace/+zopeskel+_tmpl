@@ -4,7 +4,7 @@
 
 [DEFAULT]
 # Expert Mode? (What question mode would you like? (easy/expert/all)?)
-expert_mode = all
+expert_mode = easy
 
 # Version (Version number for project)
 version = $version
