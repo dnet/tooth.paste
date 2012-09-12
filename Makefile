@@ -33,7 +33,7 @@ pyflakes:	bin/pyflakes
 templer: bin/python
 	# Hack to make believe templer that the current folder is the home folder
 	# so that it reads the local .zopeskel file with the defaults
-	export HOME="${PWD}"; ./bin/templer tooth_basic_namespace tooth.paste
+	export OLDHOME="${HOME}";export HOME="${PWD}"; ./bin/templer tooth_basic_namespace tooth.paste;export HOME="${OLDHOME}"
 	# Show the difference between the current package and the regenerated one
 	colordiff -c -r tooth.paste .|less -r
 
