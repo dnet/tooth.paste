@@ -4,7 +4,7 @@
 
 [DEFAULT]
 # Expert Mode? (What question mode would you like? (easy/expert/all)?)
-expert_mode = all
+expert_mode = easy
 
 # Version (Version number for project)
 version = 1.0
@@ -19,7 +19,7 @@ author_email = maikroeder@gmail.com
 url = https://github.com/maikroeder/tooth.paste.git
 
 # Project License (Name of license for the project)
-license_name = GPL
+license_name = gpl
 
 # Zip-Safe? (Can this project be used as a zipped egg? (true/false))
 zip_safe = False
@@ -27,7 +27,7 @@ zip_safe = False
 [big_basic_namespace]
 
 # Namespace Package Name (Name of outer namespace package)
-namespace_package = big
+namespace_package = tooth
 
 # Package Name (Name of the inner namespace package)
 package = paste
