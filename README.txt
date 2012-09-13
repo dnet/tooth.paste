@@ -16,36 +16,36 @@ Create a basic namespace Python package::
 
     $ ./bin/templer tooth_basic_namespace
 
-Inside of this new Python package you can directly run make::
+Inside of this new Python package you can directly run make.
 
-- To get started with the new package::
+To get started with the new package::
 
     make build
 
-- To build the html Sphinx documentation::
+To build the html Sphinx documentation::
 
     make docs
 
-- Have a look at the documentation::
+Have a look at the documentation::
 
     docs/build/html/index.html 
 
-- To run the unit tests::
+To run the unit tests::
 
     make test
 
-- To run the coverage::
+To run the coverage::
 
     make coverage
   
-- To run pylint::
+To run pylint::
 
     make pylint
 
-- To run flake8::
+To run flake8::
 
     make flake8
 
-- To run pep8::
+To run pep8::
 
     make pep8
