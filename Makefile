@@ -1,4 +1,4 @@
-.PHONY: docs build test coverage pylint flake8 pep8 pyflakes templer sloccount
+.PHONY: docs build test coverage pylint flake8 pep8 pyflakes templer diff sloccount dryrelease mkrelease
 
 ifndef VTENV_OPTS
 VTENV_OPTS = "--no-site-packages"
@@ -34,8 +34,19 @@ templer: bin/python
 	# Hack to make believe templer that the current folder is the home folder
 	# so that it reads the local .zopeskel file with the defaults
 	export OLDHOME="${HOME}";export HOME="${PWD}"; ./bin/templer tooth_basic_namespace tooth.paste;export HOME="${OLDHOME}"
+
+diff: bin/python
 	# Show the difference between the current package and the regenerated one
 	colordiff -c -r tooth.paste .|less -r
+
+sloccount:	bin/python
+	sloccount tooth/paste
+
+dryrelease:	bin/mkrelease
+	bin/mkrelease --no-commit --no-tag --dry-run -d pypi
+
+mkrelease:	bin/mkrelease
+	bin/mkrelease --no-commit --no-tag  -d pypi
 
 bin/sphinx-build: bin/python
 	bin/pip install sphinx
@@ -59,5 +70,5 @@ bin/pyflakes: bin/python
 bin/pep8: bin/python
 	bin/pip install pep8
 
-sloccount:	bin/python
-	sloccount tooth/paste
+bin/mkrelease: bin/python
+	bin/pip install jarn.mkrelease
