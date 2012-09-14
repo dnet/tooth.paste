@@ -49,3 +49,9 @@ To run flake8::
 To run pep8::
 
     make pep8
+
+=======
+Credits
+=======
+
+Based on ideas found in Circus - http://pypi.python.org/pypi/circus
