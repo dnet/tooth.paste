@@ -9,11 +9,15 @@ all the tools needed to keep your Python code clean.
 Get started
 -----------
 
-Prepare everything for development::
+Create a virtualenv and activate it:
 
-    $ cd tooth.paste
-    $ virtualenv --no-site-packages .
-    $ bin/python setup.py develop
+    $ virtualenv --no-site-packages trytoothpaste
+    $ cd trytoothpaste
+    $ source ./bin/activate
+ 
+Install tooth.paste in your virtualenv:
+ 
+    $ pip install tooth.paste
 
 
 Creating a new package
