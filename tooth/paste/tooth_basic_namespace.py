@@ -15,7 +15,10 @@ class InvisibleStringVar(StringVar):
     def __repr__(self):
         return self.default
 
+    def __str__(self):
+        return self.default
 
+# pylint: disable=R0904
 class ToothBasicNamespace(BasicNamespace):
     """
     Implements the basic name space for tooth.paste, adding a few invisible
@@ -29,9 +32,9 @@ This creates a Tooth Python project.
     required_templates = []
     use_cheetah = True
 
-    def check_vars(self, vars, cmd):
-        vars = super(ToothBasicNamespace, self).check_vars(vars, cmd)
-        vars['travisci'] =  InvisibleStringVar(
+    def check_vars(self, myvars, cmd):
+        myvars = super(ToothBasicNamespace, self).check_vars(myvars, cmd)
+        myvars['travisci'] =  InvisibleStringVar(
             'travisci',
             title='Travis-CI',
             description='Travis-Ci',
@@ -43,7 +46,7 @@ Travis-CI
 """
             )
 
-        vars['travisci_user'] =  InvisibleStringVar(
+        myvars['travisci_user'] =  InvisibleStringVar(
             'travisci_user',
             title='Travis-CI User',
             description='Travis-CI User',
@@ -54,7 +57,7 @@ Travis-CI URL
 """
             )
 
-        vars['travisci_project'] =  InvisibleStringVar(
+        myvars['travisci_project'] =  InvisibleStringVar(
             'travisci_project',
             title='Travis-CI Project',
             description='Travis-CI Project',
@@ -66,8 +69,8 @@ Travis-CI Project
 """
             )
 
-        info = (vars['travisci_user'], vars['travisci_project'])
-        vars['travisci_url'] =  InvisibleStringVar(
+        info = (myvars['travisci_user'], myvars['travisci_project'])
+        myvars['travisci_url'] =  InvisibleStringVar(
             'travisci_url',
             title='Travis-CI URL',
             description='Travis-CI URL',
@@ -79,7 +82,7 @@ Travis-CI URL
 """
             )
 
-        vars['documentation_url'] =  InvisibleStringVar(
+        myvars['documentation_url'] =  InvisibleStringVar(
             'documentation_url',
             title='documentation_url',
             description='documentation_url',
@@ -91,7 +94,7 @@ documentation_url
 """
             )
 
-        vars['repository_url'] =  InvisibleStringVar(
+        myvars['repository_url'] =  InvisibleStringVar(
             'repository_url',
             title='repository_url',
             description='repository_url',
@@ -103,7 +106,7 @@ repository_url
 """
             )
 
-        vars['zopeskel'] =  InvisibleStringVar(
+        myvars['zopeskel'] =  InvisibleStringVar(
             'zopeskel',
             title='ZopeSkel',
             description='ZopeSkel',
@@ -114,4 +117,4 @@ repository_url
 ZopeSkel
 """
             )
-        return vars
+        return myvars
