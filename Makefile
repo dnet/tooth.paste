@@ -19,7 +19,7 @@ coverage: bin/coverage bin/nosetests
 	bin/coverage html
 
 pylint:	bin/pylint
-	bin/pylint tooth/paste
+	bin/pylint -i y tooth/paste
 
 flake8:	bin/flake8
 	bin/flake8 --max-complexity 12 tooth/paste
