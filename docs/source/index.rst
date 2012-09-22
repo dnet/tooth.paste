@@ -38,7 +38,7 @@ Create shiny new Python package::
 Get started with the new package
 --------------------------------
 
-Prepare everything for development::
+Prepare everything for development by running ``make build``::
 
     $ cd my.project
     $ make build
@@ -46,18 +46,22 @@ Prepare everything for development::
 Document your package
 ---------------------
 
-Write some documentation::
+Once you have created your new package, you can directly write some documentation
+in the following reStructuredText document::
 
     docs/source/index.rst
+
+Consult `The Quick reStructuredText <http://docutils.sourceforge.net/docs/user/rst/quickref.html>`_ 
+reference to get started with reStructuredText.
 
 Build the html Sphinx documentation
 -----------------------------------
 
-Run the following make command::
+Run ``make docs`` to generate the Sphinx documentation in HTML::
 
     $ make docs
 
-The HTML documentation is available here::
+Open the HTML documentation in your browser and verify that the layout looks good::
 
     docs/build/html/index.html 
 
