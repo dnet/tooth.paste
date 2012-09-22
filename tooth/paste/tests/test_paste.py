@@ -1,8 +1,8 @@
 """
 Unit tests for the tooth.paste Python module.
 """
-from tooth.paste.tooth_basic_namespace import ToothBasicNamespace
-from tooth.paste.tooth_basic_namespace import InvisibleStringVar
+from tooth.paste.basic_namespace import ToothBasicNamespace
+from tooth.paste.basic_namespace import InvisibleStringVar
 
 try:
     import unittest2 as unittest  # pylint: disable=F0401
@@ -24,9 +24,10 @@ class TestToothBasicNamespace(unittest.TestCase):
         template_dir = 'templates/tooth_nested_namespace'
         # pylint: disable=W0212
         self.failUnless(tooth._template_dir == template_dir)
-        self.failUnless(tooth.summary == "A custom basic Python project")
+        summary = "A basic namespace Python package (1 dot in name)"
+        self.failUnless(tooth.summary == summary)
         self.failUnless(tooth.help == """
-This creates a Tooth Python project.
+This creates a basic namespace Python package with one dot in the name.
 """)
         self.failUnless(tooth.required_templates == [])
         self.failUnless(tooth.use_cheetah is True)
