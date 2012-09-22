@@ -5,7 +5,7 @@ from tooth.paste.tooth_basic_namespace import ToothBasicNamespace
 from tooth.paste.tooth_basic_namespace import InvisibleStringVar
 
 try:
-    import unittest2 as unittest # pylint: disable=F0401
+    import unittest2 as unittest  # pylint: disable=F0401
 except ImportError:
     import unittest  # NOQA
 
