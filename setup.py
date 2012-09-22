@@ -28,7 +28,7 @@ with open("CHANGES.txt") as f:
     CHANGES = f.read()
 
 setup(name='tooth.paste',
-      version='1.1',
+      version='1.2',
       packages=find_packages(),
       description=("Create a custom basic Python project"),
       long_description=README + '\n' + CHANGES,
