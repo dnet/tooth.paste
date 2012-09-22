@@ -30,7 +30,8 @@ with open("CHANGES.txt") as f:
 setup(name='tooth.paste',
       version='1.2',
       packages=find_packages(),
-      description=("Create a custom basic Python project"),
+      description=("Create shiny new Python packages with Sphinx documentation,"
+                   " unit tests and tools to keep your code clean"),
       long_description=README + '\n' + CHANGES,
       author='Maik Roder',
       author_email='maikroeder@gmail.com',
