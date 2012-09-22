@@ -12,17 +12,17 @@ build:
 	bin/python setup.py develop
 
 test: bin/nosetests
-	bin/nosetests -s $namespace_package/$package
+	bin/nosetests -s $namespace_package/$namespace_package2/$package
 
 coverage: bin/coverage bin/nosetests
 	bin/nosetests --with-coverage --cover-html --cover-html-dir=html --cover-package=$project
 	bin/coverage html
 
 pylint:	bin/pylint
-	bin/pylint -i y $namespace_package/$package
+	bin/pylint -i y $namespace_package/$namespace_package2/$package
 
 flake8:	bin/flake8
-	bin/flake8 --max-complexity 12 $namespace_package/$package
+	bin/flake8 --max-complexity 12 $namespace_package/$namespace_package2/$package
 
 pep8:	bin/pep8
 	bin/pep8 tooth/paste
