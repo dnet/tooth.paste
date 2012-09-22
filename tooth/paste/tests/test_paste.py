@@ -29,17 +29,18 @@ class TestToothBasicNamespace(unittest.TestCase):
 This creates a Tooth Python project.
 """)
         self.failUnless(tooth.required_templates == [])
-        self.failUnless(tooth.use_cheetah == True)
+        self.failUnless(tooth.use_cheetah is True)
 
     def test_check_vars(self):
         """
         Call the check_vars method.
-        """        
+        """
         # pylint: disable=W0232, C0111, R0903
         class DummyOptions:
             options = []
             templates = []
             no_interactive = True
+
         # pylint: disable=W0232, C0111, R0903
         class DummyCmd:
             _deleted_once = 0
@@ -47,7 +48,7 @@ This creates a Tooth Python project.
             interactive = False
         cmd = DummyCmd()
         tooth = ToothBasicNamespace('name')
-        myvars = {'project':'project'}
+        myvars = {'project': 'project'}
         myvars = tooth.check_vars(myvars, cmd)
         self.failUnless(myvars['namespace_package'] == 'project')
         self.failUnless(str(myvars['repository_url']) == '')
@@ -61,16 +62,17 @@ This creates a Tooth Python project.
         self.failUnless(str(myvars['travisci_url']) == travisci_url)
         self.failUnless(str(myvars['zopeskel']) == '.zopeskel')
         self.failUnless(myvars['project'] == 'project')
-        self.failUnless(myvars['url'] == 'http://svn.plone.org/svn/collective/')
+        url = 'http://svn.plone.org/svn/collective/'
+        self.failUnless(myvars['url'] == url)
         self.failUnless(str(myvars['travisci_user']) == '')
         self.failUnless(myvars['version'] == '1.0')
-        self.failUnless(myvars['zip_safe'] == False)
+        self.failUnless(myvars['zip_safe'] is False)
         self.failUnless(myvars['keywords'] == '')
         self.failUnless(str(myvars['travisci_project']) == 'mroder')
         self.failUnless(str(myvars['travisci']) == '.travis.ci')
         self.failUnless(myvars['long_description'] == '')
         self.failUnless(myvars['expert_mode'] == 'easy')
-        
+
 
 # pylint: disable=R0904
 class TestInvisibleStringVar(unittest.TestCase):
@@ -82,26 +84,26 @@ class TestInvisibleStringVar(unittest.TestCase):
         """
         __repr__ should return empty string by default
         """
-        invisible = InvisibleStringVar('name', 'description')
+        invisible = InvisibleStringVar('name', 'desc')
         self.failUnless(invisible.__repr__() == '')
 
     def test_repr_with_default(self):
         """
         __repr__ should return the default value string when it is set.
         """
-        invisible = InvisibleStringVar('name', 'description', default="default")
+        invisible = InvisibleStringVar('name', 'desc', default="default")
         self.failUnless(invisible.__repr__() == 'default')
 
     def test_str_without_default(self):
         """
         __str__ should return empty string by default
         """
-        invisible = InvisibleStringVar('name', 'description')
+        invisible = InvisibleStringVar('name', 'desc')
         self.failUnless(invisible.__str__() == '')
 
     def test_str_with_default(self):
         """
         __str__ should return the default value string when it is set.
         """
-        invisible = InvisibleStringVar('name', 'description', default="default")
+        invisible = InvisibleStringVar('name', 'desc', default="default")
         self.failUnless(invisible.__str__() == 'default')
