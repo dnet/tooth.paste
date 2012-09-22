@@ -1,3 +1,6 @@
+"""
+Unit tests for the tooth.paste Python module.
+"""
 from tooth.paste.tooth_basic_namespace import ToothBasicNamespace
 from tooth.paste.tooth_basic_namespace import InvisibleStringVar
 
@@ -8,10 +11,14 @@ except ImportError:
 
 
 class TestToothBasicNamespace(unittest.TestCase):
+    """
+    Unit test for the ToothBasicNamespace class.
+    """
 
     def test_repr_without_default(self):
         tooth = ToothBasicNamespace('name')
-        self.failUnless(tooth._template_dir == 'templates/tooth_nested_namespace')
+        template_dir = 'templates/tooth_nested_namespace'
+        self.failUnless(tooth._template_dir == template_dir)
         self.failUnless(tooth.summary == "A custom basic Python project")
         self.failUnless(tooth.help == """
 This creates a Tooth Python project.
@@ -23,6 +30,7 @@ This creates a Tooth Python project.
         class DummyOptions:
             options = []
             templates = []
+            no_interactive = True
         class DummyCmd:
             _deleted_once = 0
             options = DummyOptions
@@ -34,6 +42,9 @@ This creates a Tooth Python project.
         
 
 class TestInvisibleStringVar(unittest.TestCase):
+    """
+    Unit test for the InvisibleStringVar class.
+    """
 
     def test_repr_without_default(self):
         invisible = InvisibleStringVar('name', 'description')
