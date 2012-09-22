@@ -38,7 +38,7 @@ basic: bin/python
 nested: bin/python
 	# Hack to make believe templer that the current folder is the home folder
 	# so that it reads the local .zopeskel file with the defaults
-	export OLDHOME="${HOME}"; export HOME="${PWD}"; ./bin/templer tooth_nested_namespace tooth.paste; export HOME="${OLDHOME}"
+	export OLDHOME="${HOME}"; export HOME="${PWD}"; ./bin/templer tooth_nested_namespace my.tooth.paste; export HOME="${OLDHOME}"
 
 diff: bin/python
 	# Show the difference between the current package and the regenerated one
