@@ -27,9 +27,9 @@ class ToothBasicNamespace(BasicNamespace):
     strings that can be caught by the template system.
     """
     _template_dir = 'templates/tooth_nested_namespace'
-    summary = "A custom basic Python project"
+    summary = "A basic namespace Python package (1 dot in name)"
     help = """
-This creates a Tooth Python project.
+This creates a basic namespace Python package with one dot in the name.
 """
     required_templates = []
     use_cheetah = True
