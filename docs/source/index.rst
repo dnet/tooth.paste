@@ -110,14 +110,14 @@ Run flake8
 
 Runt the flake8 tool::
 
-    make flake8
+    $ make flake8
 
 Run pep8:
 ---------
 
 Run the pep8 tool::
 
-    make pep8
+    $ make pep8
 
 
 Contents:
