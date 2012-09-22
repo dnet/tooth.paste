@@ -13,6 +13,7 @@ entry_points = """
     # -*- Entry points: -*-
     [paste.paster_create_template]
     tooth_basic_namespace = tooth.paste:ToothBasicNamespace
+    tooth_nested_namespace = tooth.paste:ToothNestedNamespace
     """
 
 classifiers = [
