@@ -1,7 +1,11 @@
 """
 Implement the nested namespace support for tooth.paste, based on Templer.
 """
-from tooth.paste.tooth_basic_namespace import ToothBasicNamespace
+import copy
+
+from tooth.paste.basic_namespace import ToothBasicNamespace
+
+from templer.core.base import get_var
 from templer.core.nested_namespace import VAR_NS2
 
 
