@@ -21,7 +21,7 @@ class TestToothBasicNamespace(unittest.TestCase):
         Check the initialization of the ToothBasicNamespace class.
         """
         tooth = ToothBasicNamespace('name')
-        template_dir = 'templates/tooth_nested_namespace'
+        template_dir = 'templates/basic_namespace'
         # pylint: disable=W0212
         self.failUnless(tooth._template_dir == template_dir)
         summary = "A basic namespace Python package (1 dot in name)"
