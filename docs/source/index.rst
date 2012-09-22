@@ -9,13 +9,13 @@ all the tools needed to keep your Python code clean.
 Get started
 -----------
 
-Create a virtualenv and activate it:
+Create a virtualenv and activate it::
 
     $ virtualenv --no-site-packages trytoothpaste
     $ cd trytoothpaste
     $ source ./bin/activate
  
-Install tooth.paste in your virtualenv:
+Install tooth.paste in your virtualenv::
  
     $ pip install tooth.paste
 
