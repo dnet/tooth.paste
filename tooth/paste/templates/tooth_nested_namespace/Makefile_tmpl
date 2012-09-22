@@ -19,7 +19,7 @@ coverage: bin/coverage bin/nosetests
 	bin/coverage html
 
 pylint:	bin/pylint
-	bin/pylint $namespace_package/$package
+	bin/pylint -i y $namespace_package/$package
 
 flake8:	bin/flake8
 	bin/flake8 --max-complexity 12 $namespace_package/$package
