@@ -1,10 +1,17 @@
+from tooth.paste.tooth_basic_namespace import InvisibleStringVar
+
 try:
     import unittest2 as unittest
 except ImportError:
     import unittest  # NOQA
 
+        
+class TestInvisibleStringVar(unittest.TestCase):
 
-class TestDummy(unittest.TestCase):
+    def test_repr_without_default(self):
+        invisible = InvisibleStringVar('name', 'description')
+        self.failUnless(invisible.__repr__() == '')
 
-    def test_dummy(self):
-        self.assertTrue(True)
+    def test_repr_with_default(self):
+        invisible = InvisibleStringVar('name', 'description', default="default")
+        self.failUnless(invisible.__repr__() == 'default')
