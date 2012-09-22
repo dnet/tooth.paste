@@ -9,7 +9,12 @@ from templer.core.base import get_var
 from templer.core.nested_namespace import VAR_NS2
 
 
+# pylint: disable=R0904
 class ToothNestedNamespace(ToothBasicNamespace):
+    """
+    Implements the nested name space for tooth.paste, based on the basic namespace,
+    adding the second namespace package like Templer.
+    """
     _template_dir = 'templates/nested_namespace'
     summary = "A nested namespace Python package (2 dots in name)"
     ndots = 2
