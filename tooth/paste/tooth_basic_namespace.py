@@ -1,3 +1,6 @@
+"""
+Implement the basic namespace support for tooth.paste, based on Templer.
+"""
 import os
 from templer.core.basic_namespace import BasicNamespace
 from templer.core.vars import StringVar
@@ -5,12 +8,19 @@ from templer.core.vars import EASY
 from templer.core.vars import EXPERT
 
 class InvisibleStringVar(StringVar):
-
+    """
+    A StringVar that is not used for user input, but stored a value for
+    use in the templates.
+    """
     def __repr__(self):
         return self.default
 
 
 class ToothBasicNamespace(BasicNamespace):
+    """
+    Implements the basic name space for tooth.paste, adding a few invisible
+    strings that can be caught by the template system.
+    """
     _template_dir = 'templates/tooth_nested_namespace'
     summary = "A custom basic Python project"
     help = """
@@ -20,7 +30,7 @@ This creates a Tooth Python project.
     use_cheetah = True
 
     def check_vars(self, vars, cmd):
-        vars = super(BasicNamespace, self).check_vars(vars, cmd)
+        vars = super(ToothBasicNamespace, self).check_vars(vars, cmd)
         vars['travisci'] =  InvisibleStringVar(
             'travisci',
             title='Travis-CI',
