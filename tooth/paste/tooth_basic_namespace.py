@@ -7,6 +7,7 @@ from templer.core.vars import StringVar
 from templer.core.vars import EASY
 from templer.core.vars import EXPERT
 
+
 class InvisibleStringVar(StringVar):
     """
     A StringVar that is not used for user input, but stored a value for
@@ -17,6 +18,7 @@ class InvisibleStringVar(StringVar):
 
     def __str__(self):
         return self.default
+
 
 # pylint: disable=R0904
 class ToothBasicNamespace(BasicNamespace):
@@ -34,7 +36,7 @@ This creates a Tooth Python project.
 
     def check_vars(self, myvars, cmd):
         myvars = super(ToothBasicNamespace, self).check_vars(myvars, cmd)
-        myvars['travisci'] =  InvisibleStringVar(
+        myvars['travisci'] = InvisibleStringVar(
             'travisci',
             title='Travis-CI',
             description='Travis-Ci',
@@ -43,10 +45,9 @@ This creates a Tooth Python project.
             page='Metadata',
             help="""
 Travis-CI
-"""
-            )
+""")
 
-        myvars['travisci_user'] =  InvisibleStringVar(
+        myvars['travisci_user'] = InvisibleStringVar(
             'travisci_user',
             title='Travis-CI User',
             description='Travis-CI User',
@@ -54,10 +55,9 @@ Travis-CI
             page='Metadata',
             help="""
 Travis-CI URL
-"""
-            )
+""")
 
-        myvars['travisci_project'] =  InvisibleStringVar(
+        myvars['travisci_project'] = InvisibleStringVar(
             'travisci_project',
             title='Travis-CI Project',
             description='Travis-CI Project',
@@ -66,11 +66,10 @@ Travis-CI URL
             page='Metadata',
             help="""
 Travis-CI Project
-"""
-            )
+""")
 
         info = (myvars['travisci_user'], myvars['travisci_project'])
-        myvars['travisci_url'] =  InvisibleStringVar(
+        myvars['travisci_url'] = InvisibleStringVar(
             'travisci_url',
             title='Travis-CI URL',
             description='Travis-CI URL',
@@ -79,10 +78,9 @@ Travis-CI Project
             page='Metadata',
             help="""
 Travis-CI URL
-"""
-            )
+""")
 
-        myvars['documentation_url'] =  InvisibleStringVar(
+        myvars['documentation_url'] = InvisibleStringVar(
             'documentation_url',
             title='documentation_url',
             description='documentation_url',
@@ -91,10 +89,9 @@ Travis-CI URL
             page='Metadata',
             help="""
 documentation_url
-"""
-            )
+""")
 
-        myvars['repository_url'] =  InvisibleStringVar(
+        myvars['repository_url'] = InvisibleStringVar(
             'repository_url',
             title='repository_url',
             description='repository_url',
@@ -103,10 +100,9 @@ documentation_url
             page='Metadata',
             help="""
 repository_url
-"""
-            )
+""")
 
-        myvars['zopeskel'] =  InvisibleStringVar(
+        myvars['zopeskel'] = InvisibleStringVar(
             'zopeskel',
             title='ZopeSkel',
             description='ZopeSkel',
@@ -115,6 +111,5 @@ repository_url
             page='Metadata',
             help="""
 ZopeSkel
-"""
-            )
+""")
         return myvars
