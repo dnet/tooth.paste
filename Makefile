@@ -12,7 +12,7 @@ build:
 	bin/python setup.py develop
 
 test: bin/nosetests
-	bin/nosetests -s tooth.paste
+	bin/nosetests -s tooth/paste
 
 coverage: bin/coverage bin/nosetests
 	bin/nosetests --with-coverage --cover-html --cover-html-dir=html --cover-package=tooth.paste
