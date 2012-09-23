@@ -23,7 +23,7 @@ This creates a nested namespace Python package with two dots in the name.
     required_templates = []
     use_cheetah = True
 
-    vars = copy.deepcopy(ToothBasicNamespace.vars)
+    vars = copy.deepcopy(DotPackage.vars)
     get_var(vars, 'namespace_package').default = 'my'
     vars.insert(2, VAR_NS2)
     get_var(vars, 'package').default = 'example'
