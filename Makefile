@@ -33,7 +33,7 @@ pyflakes:	bin/pyflakes
 package: bin/python
 	# Hack to make believe templer that the current folder is the home folder
 	# so that it reads the local .zopeskel file with the defaults
-	export OLDHOME="${HOME}"; export HOME="${PWD}"; ./bin/templer package tooth.paste; export HOME="${OLDHOME}"
+	export OLDHOME="${HOME}"; export HOME="${PWD}"; ./bin/templer package tooth; export HOME="${OLDHOME}"
 
 dotpackage: bin/python
 	# Hack to make believe templer that the current folder is the home folder
