@@ -23,8 +23,8 @@ class InvisibleStringVar(StringVar):
 # pylint: disable=R0904
 class ToothBasicNamespace(BasicNamespace):
     """
-    Implements the basic name space for tooth.paste, adding a few invisible
-    strings that can be caught by the template system.
+    This creates a basic name space Python package with one dot in the name.
+    Adds invisible variables to be used by the template system.
     """
     _template_dir = 'templates/basic_namespace'
     summary = "A basic namespace Python package (1 dot in name)"
