@@ -1,5 +1,5 @@
 """
-Implement the basic namespace support for tooth.paste, based on Templer.
+Implement the package support for tooth.paste, based on Templer.
 """
 import os
 from templer.core.basic_namespace import BasicNamespace
@@ -21,13 +21,14 @@ class InvisibleStringVar(StringVar):
 
 
 # pylint: disable=R0904
-class ToothBasicNamespace(BasicNamespace):
+class Package(BasicNamespace):
     """
-    Implements the basic name space for tooth.paste, adding a few invisible
-    strings that can be caught by the template system.
+    This creates a Python package.
+    Adds invisible variables to be used by the template system.
     """
-    _template_dir = 'templates/basic_namespace'
+    _template_dir = 'templates/package'
     summary = "A basic namespace Python package (1 dot in name)"
+    ndots = 0
     help = """
 This creates a basic namespace Python package with one dot in the name.
 """
@@ -35,7 +36,7 @@ This creates a basic namespace Python package with one dot in the name.
     use_cheetah = True
 
     def check_vars(self, myvars, cmd):
-        myvars = super(ToothBasicNamespace, self).check_vars(myvars, cmd)
+        myvars = super(Package, self).check_vars(myvars, cmd)
         myvars['travisci'] = InvisibleStringVar(
             'travisci',
             title='Travis-CI',
