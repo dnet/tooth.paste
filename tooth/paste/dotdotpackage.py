@@ -3,19 +3,18 @@ Implement the nested namespace support for tooth.paste, based on Templer.
 """
 import copy
 
-from tooth.paste.basic_namespace import ToothBasicNamespace
+from tooth.paste.dotpackage import DotPackage
 
 from templer.core.base import get_var
 from templer.core.nested_namespace import VAR_NS2
 
 
 # pylint: disable=R0904
-class ToothNestedNamespace(ToothBasicNamespace):
+class DotDotPackage(DotPackage):
     """
-    Implements the nested name space for tooth.paste, based on the basic namespace,
-    adding the second namespace package like Templer.
+    This creates a nested namespace Python package with two dots in the name.
     """
-    _template_dir = 'templates/nested_namespace'
+    _template_dir = 'templates/dotdotpackage'
     summary = "A nested namespace Python package (2 dots in name)"
     ndots = 2
     help = """
