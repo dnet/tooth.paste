@@ -21,7 +21,7 @@ class TestDotPackage(unittest.TestCase):
         Check the initialization of the DotPackage class.
         """
         dotpackage = DotPackage('name')
-        template_dir = 'templates/basic_namespace'
+        template_dir = 'templates/dotpackage'
         # pylint: disable=W0212
         self.failUnless(dotpackage._template_dir == template_dir)
         summary = "A basic namespace Python package (1 dot in name)"
