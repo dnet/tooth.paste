@@ -1,4 +1,4 @@
-.PHONY: docs build test coverage pylint flake8 pep8 pyflakes basic nested diff sloccount dryrelease mkrelease
+.PHONY: docs build test coverage pylint flake8 pep8 pyflakes package dotpackage dotdotpackage diff sloccount dryrelease mkrelease
 
 ifndef VTENV_OPTS
 VTENV_OPTS = "--no-site-packages"
@@ -30,15 +30,20 @@ pep8:	bin/pep8
 pyflakes:	bin/pyflakes
 	bin/pyflakes tooth/paste
 
-basic: bin/python
+package: bin/python
 	# Hack to make believe templer that the current folder is the home folder
 	# so that it reads the local .zopeskel file with the defaults
-	export OLDHOME="${HOME}"; export HOME="${PWD}"; ./bin/templer tooth_basic_namespace tooth.paste; export HOME="${OLDHOME}"
+	export OLDHOME="${HOME}"; export HOME="${PWD}"; ./bin/templer package tooth.paste; export HOME="${OLDHOME}"
 
-nested: bin/python
+dotpackage: bin/python
 	# Hack to make believe templer that the current folder is the home folder
 	# so that it reads the local .zopeskel file with the defaults
-	export OLDHOME="${HOME}"; export HOME="${PWD}"; ./bin/templer tooth_nested_namespace my.tooth.paste; export HOME="${OLDHOME}"
+	export OLDHOME="${HOME}"; export HOME="${PWD}"; ./bin/templer dotpackage tooth.paste; export HOME="${OLDHOME}"
+
+dotdotpackage: bin/python
+	# Hack to make believe templer that the current folder is the home folder
+	# so that it reads the local .zopeskel file with the defaults
+	export OLDHOME="${HOME}"; export HOME="${PWD}"; ./bin/templer dotdotpackage my.tooth.paste; export HOME="${OLDHOME}"
 
 diff: bin/python
 	# Show the difference between the current package and the regenerated one
