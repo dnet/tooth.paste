@@ -1,8 +1,8 @@
 """
 Unit tests for the tooth.paste Python module.
 """
-from tooth.paste.basic_namespace import ToothBasicNamespace
-from tooth.paste.basic_namespace import InvisibleStringVar
+from tooth.paste.dotpackage import DotPackage
+from tooth.paste.dotpackage import InvisibleStringVar
 
 try:
     import unittest2 as unittest  # pylint: disable=F0401
@@ -11,26 +11,26 @@ except ImportError:
 
 
 # pylint: disable=R0904
-class TestToothBasicNamespace(unittest.TestCase):
+class TestDotPackage(unittest.TestCase):
     """
-    Unit test for the ToothBasicNamespace class.
+    Unit test for the DotPackage class.
     """
 
     def test_initialization(self):
         """
-        Check the initialization of the ToothBasicNamespace class.
+        Check the initialization of the DotPackage class.
         """
-        tooth = ToothBasicNamespace('name')
+        dotpackage = DotPackage('name')
         template_dir = 'templates/basic_namespace'
         # pylint: disable=W0212
-        self.failUnless(tooth._template_dir == template_dir)
+        self.failUnless(dotpackage._template_dir == template_dir)
         summary = "A basic namespace Python package (1 dot in name)"
-        self.failUnless(tooth.summary == summary)
-        self.failUnless(tooth.help == """
+        self.failUnless(dotpackage.summary == summary)
+        self.failUnless(dotpackage.help == """
 This creates a basic namespace Python package with one dot in the name.
 """)
-        self.failUnless(tooth.required_templates == [])
-        self.failUnless(tooth.use_cheetah is True)
+        self.failUnless(dotpackage.required_templates == [])
+        self.failUnless(dotpackage.use_cheetah is True)
 
     def test_check_vars(self):
         """
@@ -48,9 +48,9 @@ This creates a basic namespace Python package with one dot in the name.
             options = DummyOptions
             interactive = False
         cmd = DummyCmd()
-        tooth = ToothBasicNamespace('name')
+        dotpackage = DotPackage('name')
         myvars = {'project': 'project'}
-        myvars = tooth.check_vars(myvars, cmd)
+        myvars = dotpackage.check_vars(myvars, cmd)
         self.failUnless(myvars['namespace_package'] == 'project')
         self.failUnless(str(myvars['repository_url']) == '')
         self.failUnless(myvars['description'] == '')
