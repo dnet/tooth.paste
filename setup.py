@@ -12,8 +12,9 @@ install_requires = [
 entry_points = """
     # -*- Entry points: -*-
     [paste.paster_create_template]
-    tooth_basic_namespace = tooth.paste:ToothBasicNamespace
-    tooth_nested_namespace = tooth.paste:ToothNestedNamespace
+    package = tooth.paste:Package
+    dotpackage = tooth.paste:DotPackage
+    dotdotpackage = tooth.paste:DotDotPackage
     """
 
 classifiers = [
