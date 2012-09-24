@@ -30,8 +30,6 @@ description = $description
 # Keywords (List of keywords, space-separated)
 keywords = $keywords
 
-[big_basic_namespace]
-
 # Package Name (Name of the inner namespace package)
 package = $package
 
