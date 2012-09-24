@@ -120,6 +120,16 @@ Run the pep8 tool::
     $ make pep8
 
 
+Travis-CI:
+----------
+
+`Activate the Travis Service hook for Github <http://travis-ci.org/profile>`_
+
+Read the docs:
+--------------
+
+`Add a web hook for Read the docs <http://read-the-docs.readthedocs.org/en/latest/webhooks.html>`_
+
 Contents:
 
 .. toctree::
