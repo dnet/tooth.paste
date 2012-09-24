@@ -32,9 +32,6 @@ keywords = $keywords
 
 [big_basic_namespace]
 
-# Namespace Package Name (Name of outer namespace package)
-namespace_package = $namespace_package
-
 # Package Name (Name of the inner namespace package)
 package = $package
 
