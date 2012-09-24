@@ -70,7 +70,7 @@ This creates a basic namespace Python package with one dot in the name.
         self.failUnless(myvars['zip_safe'] is False)
         self.failUnless(myvars['keywords'] == '')
         self.failUnless(str(myvars['travisci_project']) == 'mroder')
-        self.failUnless(str(myvars['travisci']) == '.travis.ci')
+        self.failUnless(str(myvars['travisci']) == '.travis.yml')
         self.failUnless(myvars['long_description'] == '')
         self.failUnless(myvars['expert_mode'] == 'easy')
 
