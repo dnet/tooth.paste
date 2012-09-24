@@ -114,6 +114,17 @@ Travis-CI URL
 documentation_url
 """)
 
+        myvars['staticdotempty'] = InvisibleStringVar(
+            'staticdotempty',
+            title='staticdotempty',
+            description='staticdotempty',
+            default=".empty",
+            modes=(EASY, EXPERT),
+            page='Metadata',
+            help="""
+staticdotempty
+""")
+
         myvars['repository_url'] = InvisibleStringVar(
             'repository_url',
             title='repository_url',
