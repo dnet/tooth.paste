@@ -63,7 +63,7 @@ see http://docutils.sourceforge.net/rst.html).
             'travisci',
             title='Travis-CI',
             description='Travis-Ci',
-            default='.travis.ci',
+            default='.travis.yml',
             modes=(EASY, EXPERT),
             page='Metadata',
             help="""
