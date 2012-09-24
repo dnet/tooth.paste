@@ -1,6 +1,7 @@
 """
 Implement the package support for tooth.paste, based on Templer.
 """
+import copy
 import os
 from templer.core.basic_namespace import BasicNamespace
 from templer.core.vars import StringVar
@@ -34,9 +35,30 @@ This creates a basic namespace Python package with one dot in the name.
 """
     required_templates = []
     use_cheetah = True
+    vars = copy.deepcopy(BasicNamespace.vars)
+    del vars[1]
+    del vars[4]
+    vars[1].description = 'Name of the package'
 
     def check_vars(self, myvars, cmd):
         myvars = super(Package, self).check_vars(myvars, cmd)
+        
+        myvars['long_description'] = InvisibleStringVar(
+            'long_description',
+            title='Long Description',
+            description='Multi-line description (in ReST)',
+            default='',
+            modes=(),
+            page='Metadata',
+            help="""
+This should be a full description for your project. It will be
+used in the egg's setup.py.
+
+It should be entered in 'restructured text' format; for information,
+see http://docutils.sourceforge.net/rst.html).
+"""
+            )
+        
         myvars['travisci'] = InvisibleStringVar(
             'travisci',
             title='Travis-CI',
