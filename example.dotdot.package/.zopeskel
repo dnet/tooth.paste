@@ -30,7 +30,7 @@ description = Create a custom basic Python project
 # Keywords (List of keywords, space-separated)
 keywords = Tooth, paste
 
-[big_basic_namespace]
+[dotdotpackage]
 
 # Namespace Package Name (Name of outer namespace package)
 namespace_package = example
