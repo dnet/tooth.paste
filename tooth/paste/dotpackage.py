@@ -41,7 +41,7 @@ This creates a basic namespace Python package with one dot in the name.
             'travisci',
             title='Travis-CI',
             description='Travis-Ci',
-            default='.travis.ci',
+            default='.travis.yml',
             modes=(EASY, EXPERT),
             page='Metadata',
             help="""
