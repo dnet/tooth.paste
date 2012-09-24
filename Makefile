@@ -33,17 +33,17 @@ pyflakes:	bin/pyflakes
 package: bin/python
 	# Hack to make believe templer that the current folder is the home folder
 	# so that it reads the local .zopeskel file with the defaults
-	export OLDHOME="${HOME}"; export HOME="${PWD}"; ./bin/templer package toothpaste; export HOME="${OLDHOME}"
+	export OLDHOME="${HOME}"; export HOME="${PWD}"; ./bin/templer package examplepackage; export HOME="${OLDHOME}"
 
 dotpackage: bin/python
 	# Hack to make believe templer that the current folder is the home folder
 	# so that it reads the local .zopeskel file with the defaults
-	export OLDHOME="${HOME}"; export HOME="${PWD}"; ./bin/templer dotpackage tooth.paste; export HOME="${OLDHOME}"
+	export OLDHOME="${HOME}"; export HOME="${PWD}"; ./bin/templer dotpackage example.dotpackage; export HOME="${OLDHOME}"
 
 dotdotpackage: bin/python
 	# Hack to make believe templer that the current folder is the home folder
 	# so that it reads the local .zopeskel file with the defaults
-	export OLDHOME="${HOME}"; export HOME="${PWD}"; ./bin/templer dotdotpackage my.tooth.paste; export HOME="${OLDHOME}"
+	export OLDHOME="${HOME}"; export HOME="${PWD}"; ./bin/templer dotdotpackage example.dotdot.package; export HOME="${OLDHOME}"
 
 diff: bin/python
 	# Show the difference between the current package and the regenerated one
