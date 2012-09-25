@@ -30,7 +30,7 @@ with open("CHANGES.txt") as f:
     CHANGES = f.read()
 
 setup(name='tooth.paste',
-      version='1.2',
+      version='2.0',
       packages=find_packages(),
       description=("Create shiny new Python packages with Sphinx documentation,"
                    " unit tests and tools to keep your code clean"),
