@@ -19,21 +19,20 @@ Install tooth.paste in your virtualenv::
  
     $ pip install tooth.paste
 
-
 Creating a new package
 ----------------------
 
-Create shiny new Python package::
+Create a shiny new Python package::
 
-    $ ./bin/templer tooth_basic_namespace my.project
+    $ ./bin/templer package myproject
 
+Create a shiny new Python package with one dot in the name::
 
-.. note::
+    $ ./bin/templer dotpackage my.project
 
-   Right now only basic namespace packages are supported. These contain one dot in the
-   name. Basic packages without a dot will be added soon, as well as packges with a 
-   nested namespace (2 dots in name).
+Create a shiny new Python package with two dots in the name::
 
+    $ ./bin/templer dotdotpackage my.new.project
 
 Get started with the new package
 --------------------------------
@@ -76,7 +75,7 @@ You can start adding code::
 Write some tests
 ----------------
 
-You can start adding code::
+You can start writing test code::
 
     tests/test_project.py
 
@@ -118,7 +117,6 @@ Run pep8:
 Run the pep8 tool::
 
     $ make pep8
-
 
 Travis-CI:
 ----------
