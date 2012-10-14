@@ -31,13 +31,6 @@ description = Create a custom basic Python project
 keywords = Tooth, paste
 
 [dotdotpackage]
-
-# Namespace Package Name (Name of outer namespace package)
-namespace_package = example
-
-# Nested Namespace Package Name (Name of inner namespace package)
-namespace_package2 = dotdot
-
 # Package Name (Name of the inner namespace package)
 package = package
 
