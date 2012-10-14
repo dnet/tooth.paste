@@ -25,10 +25,10 @@ flake8:	bin/flake8
 	bin/flake8 --max-complexity 12 $namespace_package/$package
 
 pep8:	bin/pep8
-	bin/pep8 tooth/paste
+	bin/pep8 $namespace_package/$package
 
 pyflakes:	bin/pyflakes
-	bin/pyflakes tooth/paste
+	bin/pyflakes $namespace_package/$package
 
 templer: bin/python
 	# Hack to make believe templer that the current folder is the home folder
@@ -40,7 +40,7 @@ diff: bin/python
 	colordiff -c -r $project .|less -r
 
 sloccount:	bin/python
-	sloccount tooth/paste
+	sloccount $namespace_package/$package
 
 dryrelease:	bin/mkrelease
 	bin/mkrelease --no-commit --no-tag --dry-run -d pypi
