@@ -36,8 +36,6 @@ setup(name=${repr($project)},
       install_requires=install_requires,
       keywords=${repr($keywords) or $empty},
       url=${repr($url) or $empty},
-      license=${repr($license_name) or $empty},
-      namespace_packages=['$namespace_package', 
-                          '$namespace_package.$namespace_package2'],
+      license=${repr($license_name) or $empty},$namespace
       entry_points=entry_points,
       )
