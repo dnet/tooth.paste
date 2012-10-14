@@ -1,6 +1,7 @@
 *.egg-info
 *.mo
 *.pyc
+*.bak*
 .installed.cfg
 .mr.developer.cfg
 bin/
@@ -9,4 +10,6 @@ downloads/
 eggs/
 parts/
 var/
-
+lib/
+man/
+include/
