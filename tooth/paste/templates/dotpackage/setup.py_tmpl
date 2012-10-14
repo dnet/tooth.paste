@@ -25,7 +25,6 @@ with open("CHANGES.txt") as f:
 
 setup(name=${repr($project)},
       version=${repr($version) or '0.0'},
-      packages=find_packages(),
       description=("${description or None}"),
       long_description=README + '\n' + CHANGES,
       author=${repr($author) or $empty},
@@ -36,7 +35,6 @@ setup(name=${repr($project)},
       install_requires=install_requires,
       keywords=${repr($keywords) or $empty},
       url=${repr($url) or $empty},
-      license=${repr($license_name) or $empty},
-      namespace_packages=[${repr($namespace_package)}],
+      license=${repr($license_name) or $empty},$namespace
       entry_points=entry_points,
       )
