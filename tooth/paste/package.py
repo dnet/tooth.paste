@@ -2,6 +2,7 @@
 Implement the package support for tooth.paste, based on Templer.
 """
 import copy
+from paste.script import templates
 from templer.core.basic_namespace import BasicNamespace
 from tooth.paste.invisible import add_invisible_vars
 
@@ -14,18 +15,28 @@ class Package(BasicNamespace):
     """
     _template_dir = 'templates/package'
     summary = "A basic namespace Python package (1 dot in name)"
-    ndots = 0
     help = """
 This creates a basic namespace Python package with one dot in the name.
 """
     required_templates = []
     use_cheetah = True
     vars = copy.deepcopy(BasicNamespace.vars)
-    del vars[1]
-    del vars[4]
-    vars[1].description = 'Name of the package'
 
     def check_vars(self, myvars, cmd):
         myvars = super(Package, self).check_vars(myvars, cmd)
         add_invisible_vars(myvars)
         return myvars
+
+    def pre(self, command, output_dir, vars):
+        if '.' in vars['egg']:
+            # Taken from http://code.google.com/p/wsgitemplates/
+            namespace = []
+            for i in range(len(vars['egg'].split('.')) - 1):
+                namespace.append(".".join(vars['egg'].split('.')[0:i+1]))
+            vars['namespace'] = "\n      namespace_packages=%s," % namespace
+        else:
+           vars['namespace'] = ""
+        super(Package, self).pre(command, output_dir, vars)
+
+    def run(self, command, output_dir, vars):
+        templates.Template.run(self, command, output_dir, vars)
