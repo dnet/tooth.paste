@@ -31,13 +31,6 @@ description = $description
 keywords = $keywords
 
 [dotdotpackage]
-
-# Namespace Package Name (Name of outer namespace package)
-namespace_package = $namespace_package
-
-# Nested Namespace Package Name (Name of inner namespace package)
-namespace_package2 = $namespace_package2
-
 # Package Name (Name of the inner namespace package)
 package = $package
 
