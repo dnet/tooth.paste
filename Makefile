@@ -1,4 +1,4 @@
-.PHONY: docs build test coverage pylint flake8 pep8 pyflakes package dotpackage dotdotpackage diff sloccount dryrelease mkrelease
+.PHONY: docs build test coverage pylint flake8 pep8 pyflakes package dotpackage dotdotpackage examplepackage exampledotpackage exampledotdotpackage diff sloccount dryrelease mkrelease
 
 ifndef VTENV_OPTS
 VTENV_OPTS = "--no-site-packages"
@@ -33,14 +33,29 @@ pyflakes:	bin/pyflakes
 package: bin/python
 	# Hack to make believe templer that the current folder is the home folder
 	# so that it reads the local .zopeskel file with the defaults
-	export OLDHOME="${HOME}"; export HOME="${PWD}"; ./bin/templer package examplepackage; export HOME="${OLDHOME}"
+	./bin/templer package
 
 dotpackage: bin/python
 	# Hack to make believe templer that the current folder is the home folder
 	# so that it reads the local .zopeskel file with the defaults
-	export OLDHOME="${HOME}"; export HOME="${PWD}"; ./bin/templer dotpackage example.dotpackage; export HOME="${OLDHOME}"
+	./bin/templer dotpackage
 
 dotdotpackage: bin/python
+	# Hack to make believe templer that the current folder is the home folder
+	# so that it reads the local .zopeskel file with the defaults
+	./bin/templer dotdotpackage
+
+examplepackage: bin/python
+	# Hack to make believe templer that the current folder is the home folder
+	# so that it reads the local .zopeskel file with the defaults
+	export OLDHOME="${HOME}"; export HOME="${PWD}"; ./bin/templer package examplepackage; export HOME="${OLDHOME}"
+
+exampledotpackage: bin/python
+	# Hack to make believe templer that the current folder is the home folder
+	# so that it reads the local .zopeskel file with the defaults
+	export OLDHOME="${HOME}"; export HOME="${PWD}"; ./bin/templer dotpackage example.dotpackage; export HOME="${OLDHOME}"
+
+exampledotdotpackage: bin/python
 	# Hack to make believe templer that the current folder is the home folder
 	# so that it reads the local .zopeskel file with the defaults
 	export OLDHOME="${HOME}"; export HOME="${PWD}"; ./bin/templer dotdotpackage example.dotdot.package; export HOME="${OLDHOME}"
