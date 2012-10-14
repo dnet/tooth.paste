@@ -12,23 +12,23 @@ build:
 	bin/python setup.py develop
 
 test: bin/nosetests
-	bin/nosetests -s $namespace_package/$namespace_package2/$package
+	bin/nosetests -s ${project.replace('.','/')}
 
 coverage: bin/coverage bin/nosetests
 	bin/nosetests --with-coverage --cover-html --cover-html-dir=html --cover-package=$project
 	bin/coverage html
 
 pylint:	bin/pylint
-	bin/pylint -i y $namespace_package/$namespace_package2/$package
+	bin/pylint -i y ${project.replace('.','/')}
 
 flake8:	bin/flake8
-	bin/flake8 --max-complexity 12 $namespace_package/$namespace_package2/$package
+	bin/flake8 --max-complexity 12 ${project.replace('.','/')}
 
 pep8:	bin/pep8
-	bin/pep8 $namespace_package/$namespace_package2/$package
+	bin/pep8 ${project.replace('.','/')}
 
 pyflakes:	bin/pyflakes
-	bin/pyflakes $namespace_package/$namespace_package2/$package
+	bin/pyflakes ${project.replace('.','/')}
 
 templer: bin/python
 	# Hack to make believe templer that the current folder is the home folder
@@ -40,7 +40,7 @@ diff: bin/python
 	colordiff -c -r $project .|less -r
 
 sloccount:	bin/python
-	sloccount $namespace_package/$namespace_package2/$package
+	sloccount ${project.replace('.','/')}
 
 dryrelease:	bin/mkrelease
 	bin/mkrelease --no-commit --no-tag --dry-run -d pypi
