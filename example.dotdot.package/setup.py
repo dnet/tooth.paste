@@ -37,7 +37,6 @@ setup(name='example.dotdot.package',
       keywords='Tooth, paste',
       url='https://github.com/maikroeder/tooth.paste.git',
       license='gpl',
-      namespace_packages=['example', 
-                          'example.dotdot'],
+      namespace_packages=['example', 'example.dotdot'],
       entry_points=entry_points,
       )
