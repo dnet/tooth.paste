@@ -23,7 +23,7 @@ classifiers = [
     # http://pypi.python.org/pypi?%3Aaction=list_classifiers
 ]
 
-with open("README.txt") as f:
+with open("README.rst") as f:
     README = f.read()
 
 with open("CHANGES.txt") as f:
